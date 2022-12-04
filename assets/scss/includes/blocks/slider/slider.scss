@@ -1,0 +1,173 @@
+.slider {
+    padding-top: 50px;
+    padding-bottom: 74px;
+    @include max-xlmidle {
+        padding-top: 30px;
+        padding-bottom: 50px;
+    }
+    @include max-md {
+        padding-top: 20px;
+        padding-bottom: 29px;
+    }
+    &__top {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+    &__title {
+        font-style: normal;
+        font-weight: 400;
+        font-size: 36px;
+        line-height: 42px;
+        color: #919191;
+        @include max-xlmidle {
+            font-size: 30px;
+        }
+        @include max-lg {
+            font-size: 26px;
+        }
+        @include max-tab {
+            font-size: 22px;
+        }
+        @include max-md {
+            font-size: 20px;
+            line-height: 130%;
+        }
+        & span {
+            color: #001e41;
+        }
+    }
+    &__nav {
+        display: flex;
+        align-items: center;
+        column-gap: 8px;
+        @include max-md {
+            display: none;
+        }
+        & img {
+            width: 28px;
+        }
+        & img:nth-child(2) {
+            transform: rotateZ(180deg);
+        }
+    }
+
+    &__items {
+        padding-top: 40px;
+        @include xxl {
+            padding-left: calc(50% - 630px);
+        }
+        @include max-xxl {
+            padding: 40px 92px 0;
+        }
+        @include max-xl {
+            padding: 30px 35px 0;
+        }
+        @include max-md {
+            padding: 20px 20px 0;
+        }
+        @include max-sm {
+            padding: 10px 10px 0;
+        }
+        & .slick-track {
+            display: flex;
+            column-gap: 18px;
+        }
+    }
+    &__item {
+        padding: 20px;
+        max-width: 302px;
+        background: #f8f8fa;
+        border-radius: 10px;
+        height: auto;
+        display: flex !important;
+        flex-direction: column;
+        @include max-xia {
+            max-width: 95vw;
+        }
+        &_content {
+            flex: 1 0 auto;
+        }
+        &-title {
+            font-weight: 700;
+            font-size: 16px;
+            line-height: 150%;
+            color: #001e41;
+            @include max-md {
+                font-size: 17px;
+                line-height: 150%;
+            }
+        }
+        &-description {
+            font-weight: 400;
+            font-size: 14px;
+            line-height: 150%;
+            letter-spacing: 0.0025em;
+            color: #001e41;
+            margin-top: 20px;
+            @include max-md {
+                font-size: 12px;
+                line-height: 150%;
+            }
+        }
+        &-count {
+            font-weight: 900;
+            font-size: 48px;
+            line-height: 130%;
+            color: #ffffff;
+            background: #e3eeff;
+            text-align: right;
+            width: 100px;
+            height: 100px;
+            padding: 32px 18px;
+            margin: 3px -20px -20px auto;
+            border-radius: 100% 0 10px;
+            flex-shrink: 0;
+        }
+    }
+    &__bottom {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        column-gap: 20px;
+        margin-top: 40px;
+        @include max-md {
+            flex-direction: column;
+            row-gap: 10px;
+            margin-top: 20px;
+        }
+        &-text {
+            max-width: 440px;
+            display: block;
+            font-weight: 400;
+            font-size: 14px;
+            line-height: 130%;
+            letter-spacing: 0.0025em;
+            color: #001e41;
+            @include max-md {
+                font-size: 12px;
+                line-height: 14px;
+                max-width: 100%;
+                text-align-last: center;
+                padding: 0 20px;
+                text-align: center;
+            }
+            @include max-sm {
+                padding: 0 10px;
+            }
+        }
+    }
+    &__custom-button {
+        font-size: 16px;
+        line-height: 150%;
+        letter-spacing: 0.005em;
+        padding: 8px 24px;
+        @include max-md {
+            font-size: 14px;
+            line-height: 130%;
+        }
+    }
+}
+.slick-list {
+    min-width: 100vw;
+}

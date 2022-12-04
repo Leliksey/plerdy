@@ -1,0 +1,68 @@
+.header {
+    border-bottom: 1px solid #E5E5E5;
+    &__content {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 18px 0;
+        
+        @include max-lg {
+            padding: 16px 0;
+        }
+        @include max-md {
+            padding: 14px 0;
+        }
+    }
+    &__logo {
+        max-width: 140px;
+        @include max-lg {
+            max-width: 120px;
+        }
+        @include max-md {
+            max-width: 89px;
+        }
+    }
+    &__menu {
+        &_close {
+            display: none;
+            @include max-md {
+                display: block;
+                position: absolute;
+                top: 20px;
+                right: 20px;
+                background-image: url(../images/close_grey.png);
+                background-size: contain;
+                width: 20px;
+                height: 20px;
+                background-repeat: no-repeat;
+            }
+        }
+    }
+
+    &__group {
+        display: flex;
+        align-items: center;
+        column-gap: 40px;
+        @include max-lg {
+            column-gap: 20px;
+        }
+        @include max-md {
+            display: none;
+        }
+        & .signIn {
+            font-weight: 400;
+            font-size: 18px;
+            line-height: 160%;
+            color: #5d78ff;
+        }
+        
+    }
+    &__custom-button {
+        padding: 6px 24px;
+        font-size: 18px;
+	    line-height: 160%;
+        @include max-lg {
+            padding: 5px 20px;
+        }
+    }
+}

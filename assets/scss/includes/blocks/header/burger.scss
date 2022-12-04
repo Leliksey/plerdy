@@ -1,0 +1,8 @@
+.burger {
+    display: none;
+    @include max-md {
+        display: block;
+        max-width: 22px;
+        min-height: 26px;
+    }
+}

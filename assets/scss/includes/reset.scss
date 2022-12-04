@@ -101,23 +101,16 @@ nav,
 section {
 	display: block;
 }
+html {
+	overflow-x: hidden;
+}
 body {
-	font-family: "Raleway", sans-serif;
+	font-family: 'Roboto', sans-serif;
+	overflow-x: hidden;
 }
 ol,
 ul {
 	list-style: none;
-}
-blockquote,
-q {
-	quotes: none;
-}
-blockquote:before,
-blockquote:after,
-q:before,
-q:after {
-	content: "";
-	content: none;
 }
 table {
 	border-collapse: collapse;
@@ -131,7 +124,7 @@ a {
 	text-transform: initial;
 	color: unset;
 	&:focus {
-		color: #C17465;
+		color: #c17465;
 	}
 }
 button {
@@ -163,37 +156,48 @@ button {
 .container {
 	max-width: 1440px;
 	margin: auto;
-	padding: 0 133px 0 135px;
+	padding: 0 92px;
 	@include max-xl {
 		padding: 0 35px;
 	}
 	@include max-md {
-		padding: 0 15px;
+		padding: 0 20px;
+	}
+	@include max-sm {
+		padding: 0 10px;
 	}
 }
-.owl-stage-outer {
-	overflow: hidden;
-}
-.owl-stage {
-	display: flex;
-	// align-items: center;
-}
-.owl-nav {
-	display: none;
-}
-.owl-dots {
-	display: none;
-}
+
 .slick-arrow {
 	display: none !important;
 }
 .slick-dots {
 	display: none !important;
+	@include max-md {
+		display: flex !important;
+		justify-content: center;
+		column-gap: 6px;
+		margin-top: 10px;
+	}
+	& li {
+		width: 10px;
+		height: 10px;
+		border-radius: 50%;
+		background: #F3F4F6;
+		&.slick-active {
+			background: #5D78FF;
+		}
+	}
+	& li button {
+		display: none;
+	}
 }
 .custom-button {
-	background: #c17465;
-	border-radius: 5px;
+	background: #5d78ff;
+	border-radius: 8px;
 	color: #fff;
+	font-weight: 400;
+	color: #ffffff;
 }
 .row-rewerse {
 	flex-direction: row-reverse;

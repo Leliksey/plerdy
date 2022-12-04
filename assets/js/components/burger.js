@@ -1,11 +1,9 @@
 window.onload = function() {
-    $(".header__burger").click(function() {
-        $(".header__menu_mobile").slideToggle();
-        $(this).find("img").toggleClass("hide");
+    $(".burger").click(function() {
+        $(".menu").addClass("open");
     });
-    $(".header__menu-item").on("click", function() {
-        $(this).parent().find(".active").removeClass("active");
-        $(this).addClass("active");
+    $(".header__menu_close").on("click", function() {
+        $(".menu").removeClass("open");
     });
 };
 
@@ -14,3 +12,4 @@ $( window ).resize(function() {
         
     }
 });
+

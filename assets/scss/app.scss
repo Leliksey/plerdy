@@ -7,44 +7,14 @@
 
 //header
 @import './includes/blocks/header/header.scss';
+@import './includes/blocks/header/menu.scss';
+@import './includes/blocks/header/burger.scss';
 
 // //main
-// @import './includes/blocks/main/main.scss';
+@import './includes/blocks/main/main.scss';
 
-// //service
-// @import './includes/blocks/service/service.scss';
-
-// //popular
-// @import './includes/blocks/popular/popular.scss';
-
-// //product
-// @import './includes/blocks/product/product.scss';
-
-// //catalog
-// @import './includes/blocks/catalog/catalog.scss';
-
-// //benefits
-// @import './includes/blocks/benefits/benefits.scss';
-
-// //news
-// @import './includes/blocks/news/news.scss';
-
-// //reviews
-// @import './includes/blocks/reviews/reviews.scss';
-
-// //category
-// @import './includes/blocks/category/categorySlider.scss';
-// @import './includes/blocks/category/categoryFilter.scss';
-
-// //productPage
-// @import './includes/blocks/productPage/productPage.scss';
-// @import './includes/blocks/productPage/productTabs.scss';
-
-// //recommended
-// @import './includes/blocks/recommended/recommended.scss';
-
-// //about
-// @import './includes/blocks/about/about.scss';
+// //slider
+@import './includes/blocks/slider/slider.scss';
 
 // //popup
 // @import './includes/blocks/popup/popup.scss';

@@ -1,5 +1,6 @@
 $ip: 365px;
 $iph: 375px;
+$xia: 450px;
 $sm: 576px;
 $col: 610px;
 $md: 768px;
@@ -30,6 +31,11 @@ $xxxl: 1570px;
 }
 @mixin iph {
   @media (min-width: #{$iph}) {
+    @content;
+  }
+}
+@mixin xia {
+  @media (min-width: #{$xia}) {
     @content;
   }
 }
@@ -93,6 +99,11 @@ $xxxl: 1570px;
 }
 @mixin max-iph {
   @media (max-width: #{$iph}) {
+    @content;
+  }
+}
+@mixin max-xia {
+  @media (max-width: #{$xia}) {
     @content;
   }
 }
