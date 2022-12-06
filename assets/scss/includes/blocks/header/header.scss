@@ -1,6 +1,9 @@
 .header {
     border-bottom: 1px solid #E5E5E5;
-    position: relative;
+    position: fixed;
+    background: #fff;
+    width: 100%;
+    z-index: 20;
     &__content {
         display: flex;
         justify-content: space-between;

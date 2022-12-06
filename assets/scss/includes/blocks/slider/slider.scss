@@ -46,6 +46,7 @@
         }
         & img {
             width: 28px;
+            cursor: pointer;
         }
         & img:nth-child(2) {
             transform: rotateZ(180deg);

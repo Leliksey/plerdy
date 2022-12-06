@@ -69,9 +69,26 @@ module.exports = {
       patterns: [
         "./assets/data/browserconfig.xml",
         "./assets/data/manifest.json",
+        "./assets/data/countries.json",
         {
           from: './assets/libs/bootstrap/*.js',
           to: './js/bootstrap/[name].js'
+      },
+        {
+          from: './assets/libs/jquery-ui-1.10.4.custom.min.js',
+          to: './js/jquery-ui-1.10.4.custom.min.js'
+      },
+        {
+          from: './assets/libs/jquery-1.11.0.min.js',
+          to: './js/jquery-1.11.0.min.js'
+      },
+        {
+          from: './assets/libs/counties.js',
+          to: './js/counties.js'
+      },
+        {
+          from: './assets/libs/phonecode.js',
+          to: './js/phonecode.js'
       },
         {
           from: './assets/libs/bootstrap/*.css',
@@ -112,6 +129,10 @@ module.exports = {
         { 
           from: './assets/data/manifest.json',
           to: "manifest.json"
+        },
+        { 
+          from: './assets/data/countries.json',
+          to: "countries.json"
         },
       ],   
     }),

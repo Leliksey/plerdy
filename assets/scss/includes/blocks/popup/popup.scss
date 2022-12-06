@@ -5,13 +5,32 @@
   left: 0;
   right: 0;
   top: 114px;
-  display: flex;
+  display: none;
   margin: auto;
   z-index: 10;
+  box-shadow: 0px 3px 15px rgba(0, 0, 0, 0.08);
+  &.open {
+    display: flex;
+  }
+  @include max-lg {
+    max-width: 700px;
+  }
+  @include max-md {
+    max-width: 300px;
+    border-radius: 20px;
+  }
   &__image {
     max-width: 400px;
+    @include max-lg {
+      max-width: 300px;
+    }
+    @include max-md {
+      display: none;
+    }
     img {
       border-radius: 20px 0 0 20px;
+      min-height: 100%;
+      object-fit: cover;
     }
   }
 
@@ -19,12 +38,21 @@
     background: #fff;
     border-radius: 0 20px 20px 0;
     padding: 18px 32px 10px;
+    position: relative;
+    @include max-md {
+      border-radius: 20px;
+      padding: 39px 31px 11px;
+    }
   }
   &__close {
     position: absolute;
     top: 10px;
     right: 10px;
     width: 30px;
+    cursor: pointer;
+    @include max-md {
+      width: 23px;
+    }
   }
   &__title {
     font-weight: 400;
@@ -34,6 +62,13 @@
     text-align: center;
     color: #001e41;
     max-width: 316px;
+    @include max-xl {
+      font-size: 30px;
+    }
+    @include max-md {
+      font-size: 18px;
+      line-height: 120%;
+    }
   }
   &__description {
     font-weight: 400;
@@ -43,18 +78,30 @@
     color: #001e41;
     text-align: center;
     margin-top: 24px;
+    @include max-md {
+      font-size: 12px;
+      line-height: 150%;
+      margin-top: 18px;
+    }
   }
   &__form {
     margin-top: 24px;
     display: flex;
     flex-direction: column;
+    @include max-md {
+      margin-top: 18px;
+    }
   }
   &__label {
     display: flex;
     flex-direction: column;
+    position: relative;
   }
   &__label:not(:first-child) {
     margin-top: 8px;
+    @include max-md {
+      margin-top: 6px;
+    }
   }
   &__input-name {
     font-weight: 600;
@@ -62,12 +109,48 @@
     line-height: 130%;
     letter-spacing: 0.0025em;
     color: #919191;
+    @include max-md {
+      font-size: 9px;
+      line-height: 130%;
+    }
   }
-  & input {
+  &__input,
+  & .country-phone {
     margin-top: 4px;
     border: 1px solid #d5d5d6;
     border-radius: 8px;
     padding: 8px 12px;
+    outline: none !important;
+    @include max-md {
+      margin-top: 3px;
+      padding: 6px 9px;
+    }
+    &.danger {
+      border: 1px solid red;
+    }
+  }
+  & #phone {
+    border: none; 
+    outline: none;
+    padding: 0 8px;
+    margin-top: 0;
+    @include max-md {
+      max-width: 140px;
+      font-size: 12px;
+    }
+    
+  }
+  &__alarm {
+    font-size: 14px;
+    color: red;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: -18px;
+    @include max-md {
+      font-size: 12px;
+      bottom: -14px;
+    }
   }
   & input::placeholder {
     font-weight: 400;
@@ -75,22 +158,44 @@
     line-height: 150%;
     letter-spacing: 0.0025em;
     color: #bdbdbd;
+    @include max-md {
+      font-size: 11px;
+      line-height: 150%;
+    }
   }
   & select {
     margin-top: 4px;
     border: 1px solid #d5d5d6;
     border-radius: 8px;
     padding: 8px 12px;
+    outline: none;
+    @include max-md {
+      margin-top: 3px;
+    }
+    &.danger {
+      border: 1px solid red;
+    }
   }
   &__buttons {
     margin-top: 34px;
     display: flex;
     column-gap: 10px;
     align-items: center;
+    @include max-md {
+      margin-top: 26px;
+      column-gap: 8px;
+    }
   }
   &__custom-button {
     width: 100%;
     padding: 12px 0;
+    font-size: 16px;
+    line-height: 18px;
+    @include max-md {
+      font-size: 12px;
+      line-height: 14px;
+      padding: 9px 0;
+    }
     &[disabled] {
       background: #aed1ff;
       pointer-events: none;
@@ -101,23 +206,86 @@
     display: flex;
     align-items: center;
     column-gap: 8px;
+    @include max-md {
+      margin-top: 26px;
+      column-gap: 6px;
+    }
   }
   &__label-check {
-  }
-  &__checkbox {
-    border: 1px solid #d5d5d6;
-    border-radius: 4px;
   }
   &__group-text {
     font-weight: 400;
     font-size: 13px;
     line-height: 15px;
     color: #919191;
+    @include max-md {
+      font-size: 9.75px;
+      line-height: 11px;
+    }
     & span {
       color: #5d78ff;
     }
   }
 
   &__logo {
+    max-width: 138px;
+    margin: auto;
+    @include max-md {
+      max-width: 104px;
+    }
   }
+}
+.custom-checkbox {
+  position: absolute;
+  z-index: -1;
+  opacity: 0;
+}
+.custom-checkbox + label {
+  display: inline-flex;
+  align-items: center;
+  user-select: none;
+}
+.custom-checkbox + label::before {
+  content: "";
+  display: inline-block;
+  width: 13px;
+  height: 13px;
+  flex-shrink: 0;
+  flex-grow: 0;
+  border: 1px solid #d5d5d6;
+  border-radius: 4px;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: 50% 50%;
+  @include max-md {
+    width: 10px;
+    height: 10px;
+    border-radius: 3px;
+  }
+}
+.custom-checkbox:checked + label::before {
+  border-color: #0b76ef;
+  background-color: #5d78ff;
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 8 8'%3e%3cpath fill='%23fff' d='M6.564.75l-3.59 3.612-1.538-1.55L0 4.26 2.974 7.25 8 2.193z'/%3e%3c/svg%3e");
+}
+/* стили при наведении курсора на checkbox */
+.custom-checkbox:not(:disabled):not(:checked) + label:hover::before {
+  border-color: #b3d7ff;
+}
+/* стили для активного состояния чекбокса (при нажатии на него) */
+.custom-checkbox:not(:disabled):active + label::before {
+  background-color: #b3d7ff;
+  border-color: #b3d7ff;
+}
+/* стили для чекбокса, находящегося в фокусе */
+.custom-checkbox:focus + label::before {
+  box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+}
+/* стили для чекбокса, находящегося в фокусе и не находящегося в состоянии checked */
+.custom-checkbox:focus:not(:checked) + label::before {
+  border-color: #80bdff;
+}
+/* стили для чекбокса, находящегося в состоянии disabled */
+.custom-checkbox:disabled + label::before {
+  background-color: #e9ecef;
 }
